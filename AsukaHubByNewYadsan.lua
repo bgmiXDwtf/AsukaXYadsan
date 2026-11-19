@@ -264,7 +264,7 @@ local function resolveGuiParent()
 end
 
 -- Persistent config (JSON via writefile/readfile; silently disabled where unsupported) -----------
-local CONFIG_FILE = "VAELOR_HUB_config.json"
+local CONFIG_FILE = "ASUKA_HUB_config.json"
 local MAX_LOGS = 100
 
 local Config = { Data = {}, _pending = false }
@@ -2678,7 +2678,7 @@ end
 Config:Load()
 
 local Loader = Library:CreateWindow({
-	Name = "VÆLOR HUB",
+	Name = "ASUKA HUB",
 	Theme = Config:Get("theme", "Red"),
 	Size = UDim2.fromOffset(600, 400),
 })
@@ -2731,7 +2731,7 @@ local Info = Loader:CreateTab("Info")
 
 -- Hub + Discord button
 Info:CreateButton({
-	Name = "VÆLOR HUB",
+	Name = "ASUKA HUB",
 	Description = "Join our Discord for updates and new scripts",
 	ButtonText = "Discord",
 	Callback = function()
@@ -2747,10 +2747,10 @@ Info:CreateButton({
 
 -- Credits
 Info:CreateSection({ Text = "Credits" })
-Info:CreateStat({ Name = "Owner", Value = "N0T_Z0RO100" })
+Info:CreateStat({ Name = "Owner", Value = "AGKaBaap_YadsanAsuka" })
 
 Info:CreateSection({ Text = "Admin" })
-Info:CreateLabel({ Text = "rdjrnkdmf" })
+Info:CreateLabel({ Text = "CSXLuffy01" })
 
 -- Live stats
 Info:CreateSection({ Text = "Server Info" })
@@ -2892,7 +2892,7 @@ Info:CreateButton({
 })
 
 --==================================================================================================
--- USERS TAB: "VÆLOR USER" card (profile picture + display name + @username)
+-- USERS TAB: "ASUKA USER" card (profile picture + display name + @username)
 --==================================================================================================
 Library:RegisterComponent("UserCard", function(tab, config)
 	local theme = tab.Window.Theme
@@ -2920,7 +2920,7 @@ Library:RegisterComponent("UserCard", function(tab, config)
 		Position = UDim2.fromOffset(80, 10),
 		Size = UDim2.new(1, -92, 0, 18),
 		BackgroundTransparency = 1,
-		Text = tostring(config.Title or "VÆLOR USER"),
+		Text = tostring(config.Title or "ASUKA USER"),
 		TextColor3 = theme.Accent,
 		Font = Enum.Font.GothamBold,
 		TextSize = 13,
@@ -2980,8 +2980,8 @@ Library:RegisterComponent("UserCard", function(tab, config)
 	}
 end)
 
--- Card title by username: OWNER / ADMIN, everyone else = VÆLOR USER
-local CARD_RANKS = { ["n0t_z0ro100"] = "OWNER", ["rdjrnkdmf"] = "ADMIN" }
+-- Card title by username: OWNER / ADMIN, everyone else = ASUKA USER
+local CARD_RANKS = { ["AGKaBaap_YadsanAsuka"] = "OWNER", ["CSXLuffy01"] = "ADMIN" }
 function Library.GetExecutorName()
 	local env = (getgenv and getgenv()) or _G
 	local ok, name, version = pcall(function()
@@ -3014,7 +3014,7 @@ function Library.GetExecutorName()
 end
 
 function Library.GetCardTitle(username)
-	return CARD_RANKS[string.lower(tostring(username))] or "VÆLOR USER"
+	return CARD_RANKS[string.lower(tostring(username))] or "ASUKA USER"
 end
 
 local Users = Loader:CreateTab("Users")
@@ -3042,17 +3042,17 @@ do
 		Image = avatarImage,
 	})
 
-	Loader:Log("VÆLOR USER: " .. LocalPlayer.Name, "Success")
+	Loader:Log("ASUKA USER: " .. LocalPlayer.Name, "Success")
 end
 
 --==================================================================================================
--- HUB USERS IN THIS SERVER: only people running VÆLOR HUB in your Roblox server get a card
+-- HUB USERS IN THIS SERVER: only people running ASUKA HUB in your Roblox server get a card
 -- How: every hub user posts a small "I'm here" beacon (user id, username, display name) to a
 -- public topic on ntfy.sh that is named after the server (JobId), and reads the beacons of that
 -- same topic. No server of your own is needed.
 --==================================================================================================
 local HUB_BASE_URL = "https://ntfy.sh/"
-local HUB_TOPIC = "vaelor-hub-" .. ((game.JobId ~= "" and game.JobId) or tostring(game.PlaceId))
+local HUB_TOPIC = "asuka-hub-" .. ((game.JobId ~= "" and game.JobId) or tostring(game.PlaceId))
 local HUB_HEARTBEAT = 30 -- seconds between "I'm here" beacons
 local HUB_POLL = 10 -- seconds between checks
 local HUB_TTL = 75 -- a user disappears if no beacon arrived for this long
@@ -3061,8 +3061,8 @@ local MAX_HUB_CARDS = 40
 local httpRequest = (syn and syn.request) or (http and http.request) or http_request or request or (fluxus and fluxus.request)
 local HubCards, HubCount, hubActive = {}, 0, true
 
-Users:CreateSection({ Text = "VÆLOR Users In This Server" })
-local HubStat = Users:CreateStat({ Name = "VÆLOR users in server", Value = "Connecting..." })
+Users:CreateSection({ Text = "ASUKA Users In This Server" })
+local HubStat = Users:CreateStat({ Name = "ASUKA users in server", Value = "Connecting..." })
 
 local function refreshHubStat()
 	HubStat:SetValue(tostring(HubCount + 1), InfoTheme.Success) -- +1 = you
@@ -3236,7 +3236,7 @@ Universal:CreateScript({
 })
 
 Universal:CreateScript({
-	Name = "VÆLOR SHIFT LOCK",
+	Name = "ASUKA SHIFT LOCK",
 	Description = "Lightweight Roblox Shift Lock script with smooth camera control",
 	Callback = function()
 		RunUrl("https://raw.githubusercontent.com/lol-nashedi/VAELOR-SHIFT-LOCK/main/V%C3%86LOR%20SHIFT%20LOCKKKK")
@@ -3244,7 +3244,7 @@ Universal:CreateScript({
 })
 
 Universal:CreateScript({
-	Name = "VÆLOR ANTI BANG",
+	Name = "ASUKA ANTI BANG",
 	Description = "360° ANTI BANG, Anyone banging the user will get flinged",
 	Callback = function()
 		RunUrl("https://raw.githubusercontent.com/lol-nashedi/VAELOR-ANTI-BANG/main/V%C3%86LOR%20360%C2%B0%20ANTI%20BANG")
@@ -3252,7 +3252,7 @@ Universal:CreateScript({
 })
 
 Universal:CreateScript({
-	Name = "VÆLOR CHAT MIMIC",
+	Name = "ASUKA CHAT MIMIC",
 	Description = "Mimic's the chat of that player you trageted",
 	Callback = function()
 		RunUrl("https://pastefy.app/RoMygs6Y/raw")
@@ -3260,7 +3260,7 @@ Universal:CreateScript({
 })
 
 Universal:CreateScript({
-	Name = "VÆLOR UGC ANIMATION",
+	Name = "ASUKA UGC ANIMATION",
 	Description = "Use UGC animation packs on your character in any game",
 	Callback = function()
 		RunUrl("https://raw.githubusercontent.com/lol-nashedi/VAELOR-EMOTE-PANEL-V2/main/V%C3%86LOR%20EMOTE%20PANEL%20V2")
@@ -3276,7 +3276,7 @@ Universal:CreateScript({
 })
 
 Universal:CreateScript({
-	Name = "VÆLOR Fly Ui",
+	Name = "ASUKA Fly Ui",
 	Description = "Fly anywhere with a simple on-screen control panel",
 	Callback = function()
 		RunUrl("https://raw.githubusercontent.com/lol-nashedi/VAELOR-FLY-UI/main/V%C3%86LOR%20FLY%20UI")
@@ -3287,7 +3287,7 @@ Universal:CreateScript({
 local GameOne = Loader:CreateTab(4924922222, { Search = true })
 
 GameOne:CreateScript({
-	Name = "VÆLOR MUSIC",
+	Name = "ASUKA MUSIC",
 	Description = "Play music by ID with a built-in playlist, made for Brookhaven",
 	Callback = function()
 		RunUrl("https://raw.githubusercontent.com/lol-nashedi/VAELOR-MUSIC-PANEL-1K-IDS-/main/V%C3%86LOR%20MUSIC%20PANEL%201K%20IDS")
@@ -3295,7 +3295,7 @@ GameOne:CreateScript({
 })
 
 GameOne:CreateScript({
-	Name = "VÆLOR MUSIC | NO GAMEPASS",
+	Name = "ASUKA MUSIC | NO GAMEPASS",
 	Description = "Music player that works even without the Brookhaven gamepass",
 	Callback = function()
 		RunUrl("https://raw.githubusercontent.com/lol-nashedi/VAELOR-MUSIC-LOL/main/V%C3%86LOR%20MUSIC%20HUB%20BY%20N0T_Z0RO100")
@@ -3303,7 +3303,7 @@ GameOne:CreateScript({
 })
 
 GameOne:CreateScript({
-	Name = "VÆLOR RECHAT",
+	Name = "ASUKA RECHAT",
 	Description = "best simple ui, Can swear without tags",
 	Callback = function()
 		RunUrl("https://raw.githubusercontent.com/lol-nashedi/VAELOR-RECHAT-UPDATED/main/V%C3%86LOR%20RECHAT")
@@ -3311,7 +3311,7 @@ GameOne:CreateScript({
 })
 
 GameOne:CreateScript({
-	Name = "VÆLOR Prop Hub",
+	Name = "ASUKA Prop Hub",
 	Description = "Spawn and control props with a simple hub interface",
 	Callback = function()
 		RunUrl("https://raw.githubusercontent.com/lol-nashedi/VAELOR-PROP-PANEL/main/V%C3%86LOR%20PROP%20PANEL")
@@ -3319,7 +3319,7 @@ GameOne:CreateScript({
 })
 
 GameOne:CreateScript({
-	Name = "VÆLOR Particle Giver",
+	Name = "ASUKA Particle Giver",
 	Description = "Give yourself particle effects with one click",
 	Callback = function()
 		RunUrl("https://raw.githubusercontent.com/lol-nashedi/VAELOR-FE-PARTICLE-/main/V%C3%86LOR%20PARTICLE%20GIVER")
@@ -3327,7 +3327,7 @@ GameOne:CreateScript({
 })
 
 GameOne:CreateScript({
-	Name = "VÆLOR All Seeing Hand",
+	Name = "ASUKA All Seeing Hand",
 	Description = "Special hand effect with extra visual tricks for your character",
 	Callback = function()
 		RunUrl("https://raw.githubusercontent.com/lol-nashedi/VAELOR-ALL-SEENING-HAND/main/V%C3%86LOR%20ALL%20SEEING%20HAND")
@@ -3335,7 +3335,7 @@ GameOne:CreateScript({
 })
 
 GameOne:CreateScript({
-	Name = "VÆLOR Catalog",
+	Name = "ASUKA Catalog",
 	Description = "Browse the catalog and try items directly in game",
 	Callback = function()
 		RunUrl("https://raw.githubusercontent.com/lol-nashedi/VAELOR-FINAL-CATALOG/main/V%C3%86LOR%20CATALOG%20BY%20N0T_Z0RO100")
@@ -3343,7 +3343,7 @@ GameOne:CreateScript({
 })
 
 GameOne:CreateScript({
-	Name = "VÆLOR Chat Bypasser",
+	Name = "ASUKA Chat Bypasser",
 	Description = "Send messages with tweaked text that avoids chat filtering",
 	Callback = function()
 		RunUrl("https://haxhell.com/raw/universal-script-must-v4-chat-bypasser")
@@ -3351,7 +3351,7 @@ GameOne:CreateScript({
 })
 
 GameOne:CreateScript({
-	Name = "VÆLOR Spammer",
+	Name = "ASUKA Spammer",
 	Description = "Quickly repeat a message in chat with adjustable delay",
 	Callback = function()
 		RunUrl("https://raw.githubusercontent.com/lol-nashedi/V-LOR-SPAMMER/main/V%C3%86LOR%20SPAMMER")
@@ -3359,7 +3359,7 @@ GameOne:CreateScript({
 })
 
 GameOne:CreateScript({
-	Name = "VÆLOR SpammerV3",
+	Name = "ASUKA SpammerV3",
 	Description = "Upgraded spammer with faster speed and more options",
 	Callback = function()
 		RunUrl("https://raw.githubusercontent.com/lol-nashedi/V-LOR-SPAMMER-V3/main/V%C3%86LOR%20SPAMMER%20V3")
@@ -3367,7 +3367,7 @@ GameOne:CreateScript({
 })
 
 GameOne:CreateScript({
-	Name = "VÆLOR BANG",
+	Name = "ASUKA BANG",
 	Description = "Face bang, Back bang and more",
 	Callback = function()
 		RunUrl("https://scriptblox.com/raw/Brookhaven-RP-TXR-BANG-233812")
@@ -3375,7 +3375,7 @@ GameOne:CreateScript({
 })
 
 GameOne:CreateScript({
-	Name = "VÆLOR ITEM SPAWNER",
+	Name = "ASUKA ITEM SPAWNER",
 	Description = "Gives VIP items",
 	Callback = function()
 		RunUrl("https://raw.githubusercontent.com/lol-nashedi/VAELOR-ITEM-SPAWNER/main/V%C3%86LOR%20ITEM%20SPAWNER")
@@ -3824,7 +3824,7 @@ Changelog:CreateParagraph({ Text = "+ First release" })
 -- The "Game Support" tab automatically lists the IDs above (no duplicate registration).
 
 Loader:Notify({
-	Title = "VÆLOR HUB",
+	Title = "ASUKA HUB",
 	Content = "Loader loaded successfully!",
 	Type = "Success",
 	Duration = 3,
@@ -3866,10 +3866,10 @@ end)
 local TagPlayers = game:GetService("Players")
 
 local RANKS = {
-	OWNER = { "N0T_Z0RO100" },
+	OWNER = { "AGKaBaap_YadsanAsuka" },
 	ADMIN = {
-		"rdjrnkdmf",
-		"ZENINGOTBANNED1",
+		"CSXLuffy01",
+		"Lolluuuu73",
 	},
 }
 

@@ -3345,10 +3345,10 @@ Universal:CreateScript({
 })
 
 Universal:CreateScript({
-	Name = "INFINITE YIELD",
+	Name = "ASUKA INFINITE YIELD",
 	Description = "Powerful Roblox admin script packed with useful commands",
 	Callback = function()
-		RunUrl("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source")
+		RunUrl("https://raw.githubusercontent.com/yadsanpapa/AsukaXYadsan/refs/heads/main/AsukaInfiniteYield_.lua")
 	end,
 })
 

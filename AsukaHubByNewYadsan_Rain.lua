@@ -3340,7 +3340,7 @@ Universal:CreateScript({
 	Name = "ASUKA UGC ANIMATION",
 	Description = "Use UGC animation packs on your character in any game",
 	Callback = function()
-		RunUrl("https://raw.githubusercontent.com/lol-nashedi/VAELOR-EMOTE-PANEL-V2/main/V%C3%86LOR%20EMOTE%20PANEL%20V2")
+		RunUrl("https://raw.githubusercontent.com/yadsanpapa/AsukaXYadsan/refs/heads/main/V%C3%86LOR%20EMOTE%20PANEL%20V2.txt")
 	end,
 })
 

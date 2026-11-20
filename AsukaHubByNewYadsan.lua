@@ -3228,7 +3228,7 @@ local Universal = Loader:CreateTab("Universal", { Search = true })
 Universal:CreateLabel({ Text = "Scripts available in any game" })
 
 Universal:CreateScript({
-	Name = "VÆLOR EMOTE PANEL",
+	Name = "ASUKA EMOTE PANEL",
 	Description = "Play any emote instantly from a searchable panel",
 	Callback = function()
 		RunUrl("https://raw.githubusercontent.com/lol-nashedi/VAELOR-EMOTE-PANEL/main/V%C3%86LOR%20EMOTE%20PANEL%20BY%20N0T_Z0RO100")
@@ -3999,7 +3999,7 @@ end)
 task.spawn(function()
 	if game.PlaceId ~= 4924922222 then return end -- sirf Brookhaven
 
-	local RP_NAME = "💣ᴠÆʟᴏʀ ʜᴜʙ💣"
+	local RP_NAME = "💣Asuka Hub💣"
 	local RP_BIO = "🥀...20+ ꜱᴄʀɪᴘᴛꜱ | ᴍᴜꜱɪᴄ, ᴘʀᴏᴘꜱ, ᴇᴍᴏᴛᴇꜱ & ᴍᴏʀᴇ...🥀"
 
 	local ok, RE = pcall(function()

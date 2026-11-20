@@ -52,9 +52,9 @@ player.CharacterAdded:Connect(function(newCharacter)
     humanoid = newCharacter:WaitForChild("Humanoid")
     isR6 = humanoid.RigType == Enum.HumanoidRigType.R6
 
-    -- NOTE: original used the text "VÆLOR EMOTES" / "Anim" here; made consistent with the initial text
+    -- NOTE: original used the text "ASUKA EMOTES" / "Anim" here; made consistent with the initial text
     if titleLabel then
-        titleLabel.Text = isR6 and "VÆLOR Emotes (R6)" or "VÆLOR Emotes"
+        titleLabel.Text = isR6 and "Asuka Emotes (R6)" or "Asuka Emotes"
     end
     if catalogTab then
         catalogTab.Text = isR6 and "Animation" or "Catalog"
@@ -114,7 +114,7 @@ end
 -- Saved emotes (stored in a JSON file in the executor workspace)
 ----------------------------------------------------------------------
 
-local SAVE_FILE = "VælorEmotes_NewNEWN3WSaved.json"
+local SAVE_FILE = "AsukaEmotes_NewNEWN3WSaved.json"
 local savedEmotes = {}
 
 local function loadSavedEmotes()
@@ -256,7 +256,7 @@ end)
 ----------------------------------------------------------------------
 
 local screenGui = Instance.new("ScreenGui")
-screenGui.Name = "VÆLOR EMOTE"
+screenGui.Name = "ASUKA EMOTE"
 screenGui.Parent = CoreGui
 screenGui.Enabled = false
 screenGui.DisplayOrder = 999
@@ -359,7 +359,7 @@ titleLabel = Instance.new("TextLabel")
 titleLabel.Size = UDim2.new(1, 0, 0, scale("Y", 36))
 titleLabel.BackgroundColor3 = Color3.fromRGB(20, 20, 25)
 titleLabel.BackgroundTransparency = 0.5
-titleLabel.Text = isR6 and "VÆLOR Emotes (R6)" or "VÆLOR Emotes"
+titleLabel.Text = isR6 and "Asuka Emotes (R6)" or "Asuka Emotes"
 titleLabel.TextColor3 = Color3.new(1, 1, 1)
 titleLabel.Font = Enum.Font.GothamBold
 titleLabel.TextScaled = true
@@ -1517,13 +1517,13 @@ end
 task.spawn(function()
     pcall(function()
         StarterGui:SetCore("SendNotification", {
-            Title = "『VÆLOR』",
-            Text = "welcome to VÆLOR !!, Join discord to get more VIP title",
+            Title = "ASUKA",
+            Text = "welcome to AsukaReign !!, Join discord to get more VIP title",
             Duration = 30,
         })
         StarterGui:SetCore("SendNotification", {
-            Title = "VÆLOR",
-            Text = "BY N0T_Z0RO100",
+            Title = "ASUKA",
+            Text = "BY Yadsan_GodVerse",
             Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150",
             Duration = 25,
         })

@@ -1467,7 +1467,7 @@ toggleGui.Enabled = true
 
 local toggleButton = Instance.new("TextButton")
 toggleButton.Parent = toggleGui
-toggleButton.Text = "VX"
+toggleButton.Text = "YS"
 toggleButton.Font = Enum.Font.GothamSemibold
 toggleButton.TextScaled = true
 toggleButton.Size = UDim2.new(0, 50, 0, 50)

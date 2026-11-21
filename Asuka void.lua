@@ -1,4 +1,4 @@
--- LD RANDOM CIRCLE + VOID TP GUI 👑 (MINIMIZE + DRAG FIXED)
+-- YADSAN RANDOM CIRCLE + VOID TP GUI 👑 (MINIMIZE + DRAG FIXED)
 
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")

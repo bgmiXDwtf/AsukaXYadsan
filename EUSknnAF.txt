@@ -1,0 +1,272 @@
+-- RANDOM CIRCLE TELEPORT GUI (FULL FIXED SCRIPT: DRAG + MINIMIZE + PC + MOBILE)
+
+local Players = game:GetService("Players")
+local UIS = game:GetService("UserInputService")
+
+local player = Players.LocalPlayer
+
+--------------------------------------------------
+-- CHARACTER
+--------------------------------------------------
+
+local function getCharacter()
+	local char = player.Character or player.CharacterAdded:Wait()
+	local hrp = char:WaitForChild("HumanoidRootPart")
+	return char, hrp
+end
+
+local character, hrp = getCharacter()
+
+--------------------------------------------------
+-- VARIABLES
+--------------------------------------------------
+
+local runningLoop = false
+local originalCFrame = nil
+
+--------------------------------------------------
+-- GUI
+--------------------------------------------------
+
+local gui = Instance.new("ScreenGui")
+gui.Parent = player:WaitForChild("PlayerGui")
+gui.ResetOnSpawn = false
+gui.Name = "CircleTeleportGui"
+
+local frame = Instance.new("Frame")
+frame.Parent = gui
+frame.Size = UDim2.new(0, 260, 0, 240)
+frame.Position = UDim2.new(0.5, -130, 0.5, -120)
+frame.BackgroundColor3 = Color3.fromRGB(25,25,25)
+frame.BorderSizePixel = 0
+frame.Active = true
+frame.Selectable = true
+
+Instance.new("UICorner", frame)
+
+--------------------------------------------------
+-- TITLE
+--------------------------------------------------
+
+local title = Instance.new("TextLabel")
+title.Parent = frame
+title.Size = UDim2.new(1,0,0,30)
+title.BackgroundColor3 = Color3.fromRGB(35,35,35)
+title.Text = "Circle Teleport GUI"
+title.TextScaled = true
+title.TextColor3 = Color3.new(1,1,1)
+title.BorderSizePixel = 0
+title.Active = true
+
+Instance.new("UICorner", title)
+
+--------------------------------------------------
+-- MINIMIZE
+--------------------------------------------------
+
+local originalSize = frame.Size
+local minimized = false
+
+local minBtn = Instance.new("TextButton")
+minBtn.Parent = frame
+minBtn.Size = UDim2.new(0,30,0,30)
+minBtn.Position = UDim2.new(1,-35,0,0)
+minBtn.Text = "-"
+minBtn.BackgroundColor3 = Color3.fromRGB(70,70,70)
+minBtn.TextColor3 = Color3.new(1,1,1)
+minBtn.BorderSizePixel = 0
+minBtn.Active = true
+
+Instance.new("UICorner", minBtn)
+
+minBtn.MouseButton1Click:Connect(function()
+	minimized = not minimized
+
+	if minimized then
+		frame:TweenSize(UDim2.new(0,260,0,30), "Out", "Quad", 0.2, true)
+
+		for _,v in pairs(frame:GetChildren()) do
+			if v ~= title and v ~= minBtn and v:IsA("GuiObject") then
+				v.Visible = false
+			end
+		end
+
+		minBtn.Text = "+"
+
+	else
+		frame:TweenSize(originalSize, "Out", "Quad", 0.2, true)
+
+		for _,v in pairs(frame:GetChildren()) do
+			if v ~= title and v ~= minBtn and v:IsA("GuiObject") then
+				v.Visible = true
+			end
+		end
+
+		minBtn.Text = "-"
+	end
+end)
+
+--------------------------------------------------
+-- INPUT BOXES
+--------------------------------------------------
+
+local distanceBox = Instance.new("TextBox")
+distanceBox.Parent = frame
+distanceBox.Size = UDim2.new(0,220,0,30)
+distanceBox.Position = UDim2.new(0.5,-110,0,45)
+distanceBox.Text = "20"
+distanceBox.PlaceholderText = "Distance"
+distanceBox.BackgroundColor3 = Color3.fromRGB(45,45,45)
+distanceBox.TextColor3 = Color3.new(1,1,1)
+distanceBox.BorderSizePixel = 0
+distanceBox.ClearTextOnFocus = false
+
+Instance.new("UICorner", distanceBox)
+
+local speedBox = Instance.new("TextBox")
+speedBox.Parent = frame
+speedBox.Size = UDim2.new(0,220,0,30)
+speedBox.Position = UDim2.new(0.5,-110,0,110)
+speedBox.Text = "0.2"
+speedBox.PlaceholderText = "Speed"
+speedBox.BackgroundColor3 = Color3.fromRGB(45,45,45)
+speedBox.TextColor3 = Color3.new(1,1,1)
+speedBox.BorderSizePixel = 0
+speedBox.ClearTextOnFocus = false
+
+Instance.new("UICorner", speedBox)
+
+--------------------------------------------------
+-- BUTTONS
+--------------------------------------------------
+
+local startBtn = Instance.new("TextButton")
+startBtn.Parent = frame
+startBtn.Size = UDim2.new(0,100,0,40)
+startBtn.Position = UDim2.new(0,20,1,-55)
+startBtn.Text = "START"
+startBtn.BackgroundColor3 = Color3.fromRGB(0,170,0)
+startBtn.TextColor3 = Color3.new(1,1,1)
+startBtn.BorderSizePixel = 0
+startBtn.Active = true
+
+Instance.new("UICorner", startBtn)
+
+local stopBtn = Instance.new("TextButton")
+stopBtn.Parent = frame
+stopBtn.Size = UDim2.new(0,100,0,40)
+stopBtn.Position = UDim2.new(1,-120,1,-55)
+stopBtn.Text = "STOP"
+stopBtn.BackgroundColor3 = Color3.fromRGB(170,0,0)
+stopBtn.TextColor3 = Color3.new(1,1,1)
+stopBtn.BorderSizePixel = 0
+stopBtn.Active = true
+
+Instance.new("UICorner", stopBtn)
+
+--------------------------------------------------
+-- ✅ PERFECT DRAG SYSTEM (PC + MOBILE)
+--------------------------------------------------
+
+local dragging = false
+local dragStart = nil
+local startPos = nil
+
+local function updateDrag(input)
+	local delta = input.Position - dragStart
+	frame.Position = UDim2.new(
+		startPos.X.Scale,
+		startPos.X.Offset + delta.X,
+		startPos.Y.Scale,
+		startPos.Y.Offset + delta.Y
+	)
+end
+
+title.InputBegan:Connect(function(input)
+	if minimized then return end
+
+	if input.UserInputType == Enum.UserInputType.MouseButton1
+	or input.UserInputType == Enum.UserInputType.Touch then
+
+		dragging = true
+		dragStart = input.Position
+		startPos = frame.Position
+
+		input.Changed:Connect(function()
+			if input.UserInputState == Enum.UserInputState.End then
+				dragging = false
+			end
+		end)
+	end
+end)
+
+UIS.InputChanged:Connect(function(input)
+	if minimized then return end
+
+	if dragging and (
+		input.UserInputType == Enum.UserInputType.MouseMovement
+		or input.UserInputType == Enum.UserInputType.Touch
+	) then
+		updateDrag(input)
+	end
+end)
+
+--------------------------------------------------
+-- TELEPORT LOOP
+--------------------------------------------------
+
+local function startTeleport()
+	if runningLoop then return end
+
+	character, hrp = getCharacter()
+	originalCFrame = hrp.CFrame
+	runningLoop = true
+
+	task.spawn(function()
+		local angle = 0
+
+		while runningLoop do
+			local radius = tonumber(distanceBox.Text) or 20
+			local speed = tonumber(speedBox.Text) or 0.2
+
+			angle += math.rad(25)
+
+			local x = math.cos(angle) * radius
+			local z = math.sin(angle) * radius
+
+			if hrp and originalCFrame then
+				hrp.CFrame = originalCFrame + Vector3.new(x, 0, z)
+			end
+
+			task.wait(speed)
+		end
+	end)
+end
+
+local function stopTeleport()
+	runningLoop = false
+
+	if hrp and originalCFrame then
+		hrp.CFrame = originalCFrame
+	end
+end
+
+--------------------------------------------------
+-- BUTTON CONNECTIONS
+--------------------------------------------------
+
+startBtn.MouseButton1Click:Connect(startTeleport)
+stopBtn.MouseButton1Click:Connect(stopTeleport)
+
+--------------------------------------------------
+-- AUTO RESET IF PLAYER DIES / RESPAWNS
+--------------------------------------------------
+
+player.CharacterAdded:Connect(function()
+	task.wait(1)
+	character, hrp = getCharacter()
+
+	if runningLoop then
+		originalCFrame = hrp.CFrame
+	end
+end)

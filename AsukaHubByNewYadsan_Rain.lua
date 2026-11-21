@@ -3341,7 +3341,6 @@ Universal:CreateScript({
 
 Universal:CreateScript({
 	Name = "ASUKA UGC ANIMATION",
-	Description = "Use UGC animation packs on your character in any game",
 	Callback = function()
 		RunUrl("https://raw.githubusercontent.com/yadsanpapa/AsukaXYadsan/refs/heads/main/AsukaUGCEmote.lua")
 	end,
@@ -3349,23 +3348,36 @@ Universal:CreateScript({
 
 Universal:CreateScript({
 	Name = "ASUKA INFINITE YIELD",
-	Description = "Powerful Roblox admin script packed with useful commands",
 	Callback = function()
 		RunUrl("https://raw.githubusercontent.com/yadsanpapa/AsukaXYadsan/refs/heads/main/AsukaInfiniteYield_.lua")
 	end,
 })
 
 Universal:CreateScript({
-	Name = "ASUKA TELEPORT",
+	Name = "TELEPORT",
 	Callback = function()
 		RunUrl("https://pastebin.com/raw/EUSknnAF")
 	end,
 })
 
 Universal:CreateScript({
-	Name = "ASUKA TELEPORT + VOID",
+	Name = "TELEPORT + VOID",
 	Callback = function()
 		RunUrl("https://pastebin.com/raw/216FSAFS")
+	end,
+})
+
+Universal:CreateScript({
+	Name = "SKY AND VOID FALL",
+	Callback = function()
+		RunUrl("https://pastefy.app/R19boYKQ/raw")
+	end,
+})
+
+Universal:CreateScript({
+	Name = "SHIELD",
+	Callback = function()
+		RunUrl("https://pastefy.app/vmNCFqWA/raw")
 	end,
 })
 
@@ -3812,9 +3824,6 @@ Changelog:CreateParagraph({
 	}, "\n"),
 })
 
-Changelog:CreateSection({ Text = "v1.0.0" })
-Changelog:CreateParagraph({ Text = "+ First release" })
-
 -- The "Game Support" tab automatically lists the IDs above (no duplicate registration).
 
 Loader:Notify({
@@ -3991,8 +4000,7 @@ end)
 
 -- AUTO RP Name + Bio + Red Fade ----------------------------------------------
 task.spawn(function()
-	if game.PlaceId ~= 4924922222 then return end -- sirf Brookhaven
-    if game.PlaceId ~= 13967668166 then return end -- sirf Life Together Rp 
+if game.PlaceId ~= 13967668166 then return end -- sirf Life Together Rp 
 		
 	local RP_NAME = "💣Asuka Hub💣"
 	local RP_BIO = "🥀...20+ ꜱᴄʀɪᴘᴛꜱ | ᴘʀᴏᴘꜱ, ᴇᴍᴏᴛᴇꜱ & ᴍᴏʀᴇ...🥀"

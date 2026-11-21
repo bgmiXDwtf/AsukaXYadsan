@@ -2760,7 +2760,7 @@ local Loader = Library:CreateWindow({
 	Size = UDim2.fromOffset(600, 400),
 })
 
-local DISCORD_LINK = "https://discord.gg/rQ4Sv2x7"
+local DISCORD_LINK = "https://discord.gg/gW65gk7tg"
 local HUB_VERSION = Library.Version
 -- Raw link to a text file that contains only the latest version number (e.g. "1.2.0").
 -- Leave empty to disable update checks.
@@ -3305,34 +3305,37 @@ local Universal = Loader:CreateTab("Universal", { Search = true })
 Universal:CreateLabel({ Text = "Scripts available in any game" })
 
 Universal:CreateScript({
-	Name = "ASUKA EMOTE PANEL",
-	Description = "Play any emote instantly from a searchable panel",
+	Name = "ASUKA SPAMMER V1",
 	Callback = function()
-		RunUrl("https://raw.githubusercontent.com/lol-nashedi/VAELOR-EMOTE-PANEL/main/V%C3%86LOR%20EMOTE%20PANEL%20BY%20N0T_Z0RO100")
+		RunUrl("https://raw.githubusercontent.com/ZxyYadsan/Asuka-Hub/refs/heads/main/AsukaSpammerRedByLeader.lua")
 	end,
 })
 
 Universal:CreateScript({
-	Name = "ASUKA SHIFT LOCK",
-	Description = "Lightweight Roblox Shift Lock script with smooth camera control",
+	Name = "ASUKA SPAMMER V2",
 	Callback = function()
-		RunUrl("https://raw.githubusercontent.com/lol-nashedi/VAELOR-SHIFT-LOCK/main/V%C3%86LOR%20SHIFT%20LOCKKKK")
+		RunUrl("https://raw.githubusercontent.com/ZxyYadsan/Asuka-Hub/refs/heads/main/AsukaSpammerV2vyYadsan.lua")
 	end,
 })
 
 Universal:CreateScript({
-	Name = "ASUKA ANTI BANG",
-	Description = "360° ANTI BANG, Anyone banging the user will get flinged",
+	Name = "ASUKA ANTI-BANG",
 	Callback = function()
-		RunUrl("https://raw.githubusercontent.com/lol-nashedi/VAELOR-ANTI-BANG/main/V%C3%86LOR%20360%C2%B0%20ANTI%20BANG")
+		RunUrl("https://pastefy.app/LWt8j0ex/raw")
 	end,
 })
 
 Universal:CreateScript({
-	Name = "ASUKA CHAT MIMIC",
-	Description = "Mimic's the chat of that player you trageted",
+	Name = "ASUKA ANTI-BANG V2",
 	Callback = function()
-		RunUrl("https://pastefy.app/RoMygs6Y/raw")
+		RunUrl("https://pastefy.app/6XjwR6a0/raw")
+	end,
+})
+
+Universal:CreateScript({
+	Name = "ASUKA ANTI-BANG V3",
+	Callback = function()
+		RunUrl("https://pastefy.app/6XjwR6a0/raw")
 	end,
 })
 
@@ -3353,109 +3356,16 @@ Universal:CreateScript({
 })
 
 Universal:CreateScript({
-	Name = "ASUKA Fly Ui",
-	Description = "Fly anywhere with a simple on-screen control panel",
+	Name = "ASUKA TELEPORT",
 	Callback = function()
-		RunUrl("https://raw.githubusercontent.com/lol-nashedi/VAELOR-FLY-UI/main/V%C3%86LOR%20FLY%20UI")
+		RunUrl("https://pastebin.com/raw/EUSknnAF")
 	end,
 })
 
--- Tabs by game ID (only appear in the compatible game; name fetched automatically) ---------------
-local GameOne = Loader:CreateTab(4924922222, { Search = true })
-
-GameOne:CreateScript({
-	Name = "ASUKA MUSIC",
-	Description = "Play music by ID with a built-in playlist, made for Brookhaven",
+Universal:CreateScript({
+	Name = "ASUKA TELEPORT + VOID",
 	Callback = function()
-		RunUrl("https://raw.githubusercontent.com/lol-nashedi/VAELOR-MUSIC-PANEL-1K-IDS-/main/V%C3%86LOR%20MUSIC%20PANEL%201K%20IDS")
-	end,
-})
-
-GameOne:CreateScript({
-	Name = "ASUKA MUSIC | NO GAMEPASS",
-	Description = "Music player that works even without the Brookhaven gamepass",
-	Callback = function()
-		RunUrl("https://raw.githubusercontent.com/lol-nashedi/VAELOR-MUSIC-LOL/main/V%C3%86LOR%20MUSIC%20HUB%20BY%20N0T_Z0RO100")
-	end,
-})
-
-GameOne:CreateScript({
-	Name = "ASUKA RECHAT",
-	Description = "best simple ui, Can swear without tags",
-	Callback = function()
-		RunUrl("https://raw.githubusercontent.com/lol-nashedi/VAELOR-RECHAT-UPDATED/main/V%C3%86LOR%20RECHAT")
-	end,
-})
-
-GameOne:CreateScript({
-	Name = "ASUKA Prop Hub",
-	Description = "Spawn and control props with a simple hub interface",
-	Callback = function()
-		RunUrl("https://raw.githubusercontent.com/lol-nashedi/VAELOR-PROP-PANEL/main/V%C3%86LOR%20PROP%20PANEL")
-	end,
-})
-
-GameOne:CreateScript({
-	Name = "ASUKA Particle Giver",
-	Description = "Give yourself particle effects with one click",
-	Callback = function()
-		RunUrl("https://raw.githubusercontent.com/lol-nashedi/VAELOR-FE-PARTICLE-/main/V%C3%86LOR%20PARTICLE%20GIVER")
-	end,
-})
-
-GameOne:CreateScript({
-	Name = "ASUKA All Seeing Hand",
-	Description = "Special hand effect with extra visual tricks for your character",
-	Callback = function()
-		RunUrl("https://raw.githubusercontent.com/lol-nashedi/VAELOR-ALL-SEENING-HAND/main/V%C3%86LOR%20ALL%20SEEING%20HAND")
-	end,
-})
-
-GameOne:CreateScript({
-	Name = "ASUKA Catalog",
-	Description = "Browse the catalog and try items directly in game",
-	Callback = function()
-		RunUrl("https://raw.githubusercontent.com/lol-nashedi/VAELOR-FINAL-CATALOG/main/V%C3%86LOR%20CATALOG%20BY%20N0T_Z0RO100")
-	end,
-})
-
-GameOne:CreateScript({
-	Name = "ASUKA Chat Bypasser",
-	Description = "Send messages with tweaked text that avoids chat filtering",
-	Callback = function()
-		RunUrl("https://haxhell.com/raw/universal-script-must-v4-chat-bypasser")
-	end,
-})
-
-GameOne:CreateScript({
-	Name = "ASUKA Spammer",
-	Description = "Quickly repeat a message in chat with adjustable delay",
-	Callback = function()
-		RunUrl("https://raw.githubusercontent.com/lol-nashedi/V-LOR-SPAMMER/main/V%C3%86LOR%20SPAMMER")
-	end,
-})
-
-GameOne:CreateScript({
-	Name = "ASUKA SpammerV3",
-	Description = "Upgraded spammer with faster speed and more options",
-	Callback = function()
-		RunUrl("https://raw.githubusercontent.com/lol-nashedi/V-LOR-SPAMMER-V3/main/V%C3%86LOR%20SPAMMER%20V3")
-	end,
-})
-
-GameOne:CreateScript({
-	Name = "ASUKA BANG",
-	Description = "Face bang, Back bang and more",
-	Callback = function()
-		RunUrl("https://scriptblox.com/raw/Brookhaven-RP-TXR-BANG-233812")
-	end,
-})
-
-GameOne:CreateScript({
-	Name = "ASUKA ITEM SPAWNER",
-	Description = "Gives VIP items",
-	Callback = function()
-		RunUrl("https://raw.githubusercontent.com/lol-nashedi/VAELOR-ITEM-SPAWNER/main/V%C3%86LOR%20ITEM%20SPAWNER")
+		RunUrl("https://pastebin.com/raw/216FSAFS")
 	end,
 })
 
@@ -4020,7 +3930,7 @@ local function makeHexagonTag(player, rankname)
 	tag.Size = UDim2.new(1, 0, 0.246, 0)
 	tag.Position = UDim2.new(0, 0, 0.8, 0)
 	tag.BackgroundTransparency = 1
-	tag.Text = rankname or "User"
+	tag.Text = rankname or "Asuka User"
 	tag.TextColor3 = Color3.fromRGB(255, 255, 255)
 	tag.TextScaled = true
 	tag.Font = Enum.Font.FredokaOne
@@ -4046,7 +3956,7 @@ end
 local function applyTag(player)
 	local rankName = getRank(player)
 	if not rankName and player == TagPlayers.LocalPlayer then
-		rankName = "User"
+		rankName = "Asuka User"
 	end
 	if rankName then
 		makeHexagonTag(player, rankName)
@@ -4082,9 +3992,10 @@ end)
 -- AUTO RP Name + Bio + Red Fade ----------------------------------------------
 task.spawn(function()
 	if game.PlaceId ~= 4924922222 then return end -- sirf Brookhaven
-
+    if game.PlaceId ~= 13967668166 then return end -- sirf Life Together Rp 
+		
 	local RP_NAME = "💣Asuka Hub💣"
-	local RP_BIO = "🥀...20+ ꜱᴄʀɪᴘᴛꜱ | ᴍᴜꜱɪᴄ, ᴘʀᴏᴘꜱ, ᴇᴍᴏᴛᴇꜱ & ᴍᴏʀᴇ...🥀"
+	local RP_BIO = "🥀...20+ ꜱᴄʀɪᴘᴛꜱ | ᴘʀᴏᴘꜱ, ᴇᴍᴏᴛᴇꜱ & ᴍᴏʀᴇ...🥀"
 
 	local ok, RE = pcall(function()
 		return game:GetService("ReplicatedStorage"):WaitForChild("RE", 10)

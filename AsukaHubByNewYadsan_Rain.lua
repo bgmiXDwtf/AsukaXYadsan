@@ -3335,7 +3335,7 @@ Universal:CreateScript({
 Universal:CreateScript({
 	Name = "ASUKA ANTI-BANG V3",
 	Callback = function()
-		RunUrl("https://pastefy.app/6XjwR6a0/raw")
+		RunUrl("https://pastefy.app/Kdj1vXgq/raw")
 	end,
 })
 
@@ -4000,7 +4000,7 @@ end)
 
 -- AUTO RP Name + Bio + Red Fade ----------------------------------------------
 task.spawn(function()
-if game.PlaceId ~= 13967668166 then return end -- sirf Life Together Rp 
+        if game.PlaceId ~= 4924922222 then return end -- sirf Brookhaven
 		
 	local RP_NAME = "💣Asuka Hub💣"
 	local RP_BIO = "🥀...20+ ꜱᴄʀɪᴘᴛꜱ | ᴘʀᴏᴘꜱ, ᴇᴍᴏᴛᴇꜱ & ᴍᴏʀᴇ...🥀"

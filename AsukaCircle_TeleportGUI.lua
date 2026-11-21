@@ -1,4 +1,4 @@
--- RANDOM CIRCLE TELEPORT GUI (FULL FIXED SCRIPT: DRAG + MINIMIZE + PC + MOBILE)
+-- RANDOM YADSAN CIRCLE TELEPORT GUI (FULL FIXED SCRIPT: DRAG + MINIMIZE + PC + MOBILE)
 
 local Players = game:GetService("Players")
 local UIS = game:GetService("UserInputService")

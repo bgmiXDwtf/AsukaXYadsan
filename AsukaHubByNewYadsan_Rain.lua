@@ -3356,14 +3356,14 @@ Universal:CreateScript({
 Universal:CreateScript({
 	Name = "TELEPORT",
 	Callback = function()
-		RunUrl("https://pastebin.com/raw/EUSknnAF")
+		RunUrl("https://raw.githubusercontent.com/yadsanpapa/AsukaXYadsan/refs/heads/main/AsukaCircle_TeleportGUI.lua")
 	end,
 })
 
 Universal:CreateScript({
 	Name = "TELEPORT + VOID",
 	Callback = function()
-		RunUrl("https://pastebin.com/raw/216FSAFS")
+		RunUrl("https://raw.githubusercontent.com/yadsanpapa/AsukaXYadsan/refs/heads/main/Asuka%20void.lua")
 	end,
 })
 
@@ -3371,13 +3371,6 @@ Universal:CreateScript({
 	Name = "SKY AND VOID FALL",
 	Callback = function()
 		RunUrl("https://pastefy.app/R19boYKQ/raw")
-	end,
-})
-
-Universal:CreateScript({
-	Name = "SHIELD",
-	Callback = function()
-		RunUrl("https://pastefy.app/vmNCFqWA/raw")
 	end,
 })
 

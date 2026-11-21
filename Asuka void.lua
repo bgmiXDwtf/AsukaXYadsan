@@ -68,7 +68,7 @@ local minimized = false
 -------------------------------------------------
 
 local gui = Instance.new("ScreenGui")
-gui.Name = "LDVoidTP"
+gui.Name = "YSVoidTP"
 gui.Parent = game.CoreGui
 
 local frame = Instance.new("Frame")
